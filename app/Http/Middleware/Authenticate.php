@@ -21,10 +21,10 @@ class Authenticate extends Middleware
         if(empty($request->header('Authorization'))){
             header('HTTP/1.0 401');
             echo 'Unauthorization Access!!!';
-            die();
         } else {
             $user = JWTAuth::parseToken()->authenticate();
-            var_dump($user);
+            print_r($user);
         }
+        die();
     }
 }

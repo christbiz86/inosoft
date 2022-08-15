@@ -25,6 +25,7 @@ Route::group(['middleware' => 'api'], function($router) {
     Route::post('/refresh', [\App\Http\Controllers\UserController::class, 'refresh']);
     Route::post('/profile', [\App\Http\Controllers\UserController::class, 'profile']);
 
-    Route::get('/motor', [\App\Http\Controllers\MotorController::class, 'index'])->middleware('auth:api');
+    Route::post('/motor', [\App\Http\Controllers\MotorController::class, 'store'])->middleware('auth:api');
+    Route::post('/car', [\App\Http\Controllers\CarController::class, 'store'])->middleware('auth:api');
 
 });
